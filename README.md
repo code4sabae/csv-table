@@ -1,5 +1,6 @@
 # csv-table
 csv-table HTMLElement ES module  
+![csv-table](https://code4sabae.github.io/csv-table/csv-table.png)  
 
 # how to use
 ```
