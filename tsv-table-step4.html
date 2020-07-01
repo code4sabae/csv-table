@@ -1,0 +1,37 @@
+<!DOCTYPE html><head><meta charset="utf-8"/>
+</head>
+<body>
+
+<h2>tsv-table</h2>
+
+<script type="module">
+class TSVTable extends HTMLElement {
+  constructor () {
+    super();
+    const v = this.textContent.trim().split("\n").map(a => a.split("\t"));
+    this.innerHTML = ["<table>", v.map(a => `<tr>${a.map(b => `<td>${b}</td>`).join("")}</tr>`).join(""), "</table>"].join("");
+  }
+}
+customElements.define("tsv-table", TSVTable);
+</script>
+
+<style>
+table {
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid #333;
+  padding: .1em .5em;
+  font-size: 90%;
+}
+</style>
+
+<tsv-table>
+id	name
+1	なまえ
+2	名前
+3	ナマエ
+</tsv-table>
+
+</body>
+</html>

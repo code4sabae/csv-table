@@ -1,0 +1,25 @@
+<!DOCTYPE html><head><meta charset="utf-8"/>
+</head>
+<body>
+
+<h2>tsv-table</h2>
+
+<script type="module">
+class TSVTable extends HTMLElement {
+  constructor () {
+    super();
+    this.textContent = "tsv-table!!";
+  }
+}
+customElements.define("tsv-table", TSVTable);
+</script>
+
+<tsv-table>
+id	name
+1	なまえ
+2	名前
+3	ナマエ
+</tsv-table>
+
+</body>
+</html>
