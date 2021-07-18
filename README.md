@@ -4,6 +4,7 @@ csv-table / tsv-table HTMLElement ES module
 ![csv-table](https://code4sabae.github.io/csv-table/csv-table.png)  
 
 # How to use
+
 ```
 <script type="module" src="https://code4sabae.github.io/csv-table/csv-table.mjs"></script>
 <csv-table>
@@ -13,6 +14,13 @@ id,name
 3,"ナ
 マエ"
 </csv-table>
+```
+
+or 
+
+```
+<script type="module" src="https://code4sabae.github.io/csv-table/csv-table.mjs"></script>
+<csv-table src="./test.csv"></csv-table>
 ```
 
 # sample
