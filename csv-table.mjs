@@ -1,10 +1,23 @@
-import util from "https://taisukef.github.io/util/util.mjs";
+import { CSV } from "https://js.sabae.cc/CSV.js";
 
 class CSVTable extends HTMLElement {
+  async getCSV() {
+    const fn = this.getAttribute("src");
+    if (fn) {
+      const data = await CSV.fetch(fn);
+      return data;
+    }
+    const txt = this.textContent.trim();
+    const data = CSV.decode(txt);
+    this.textContent = "";
+    return data;
+  }
   constructor () {
     super();
-    const ss = util.decodeCSV(this.textContent.trim());
-    this.textContent = "";
+    this.init();
+  }
+  async init() {
+    const ss = await this.getCSV();
 
     const c = tag => document.createElement(tag);
     const tbl = c("table");
@@ -39,3 +52,5 @@ class CSVTable extends HTMLElement {
 }
 
 customElements.define('csv-table', CSVTable);
+
+export { CSVTable };
